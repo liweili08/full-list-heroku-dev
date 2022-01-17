@@ -9,7 +9,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping({"${spring.datasource.url}"})
+@RequestMapping({"api"})
 public class ListController {
     private final ListService listService;
 
