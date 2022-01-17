@@ -1,0 +1,9 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://Liwei:ll364650@liwei-test-cluster.i9tks.mongodb.net/shoppingDB?retryWrites=true&w=majority
+  datasource:
+    url: api
