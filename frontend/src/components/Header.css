@@ -1,0 +1,10 @@
+.header{
+    color: wheat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+h2{
+    color: yellowgreen;
+    border: 5px solid hotpink;
+}
