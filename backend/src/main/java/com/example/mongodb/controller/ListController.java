@@ -9,7 +9,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping({"api"})
+@RequestMapping({"/api"})
 public class ListController {
     private final ListService listService;
 
@@ -18,17 +18,17 @@ public class ListController {
     }
 
     //*********** Methoden *********
-    @GetMapping("lists")
+    @GetMapping("/lists")
     public List<ListItem> getAll() {
         return listService.getAllItems();
     }
 
-    @PostMapping("lists")
+    @PostMapping("/lists")
     public List<ListItem> postAddItem(@RequestBody ListItem itemToAdd){
         return listService.addItem(itemToAdd);
     }
 
-    @PutMapping("lists/{itemKey}")
+    @PutMapping("/lists/{itemKey}")
     public List<ListItem> putIncreaseQuantity(@PathVariable String itemKey){
         return listService.increaseQuantity(itemKey);
     }
@@ -38,7 +38,7 @@ public class ListController {
         return listService.decreaseQuantity(itemKey);
     }
 
-    @DeleteMapping("lists/")
+    @DeleteMapping("/lists")
     public List<ListItem> deleteItem(@PathVariable String itemKey){
         return listService.removeItem(itemKey);
     }

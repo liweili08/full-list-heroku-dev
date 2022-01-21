@@ -4,7 +4,6 @@ import com.example.mongodb.model.ListItem;
 import com.example.mongodb.repository.ListRepo;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -30,17 +29,17 @@ public List<ListItem> getAllItems() {
 
     public List<ListItem> increaseQuantity(String itemKey) {
         ListItem itemToIncrease = listRepo.findById(itemKey).get();
-        itemToIncrease.setQuantity(itemToIncrease.getQuantity()+1);
+        itemToIncrease.setItemQuantity(itemToIncrease.getItemQuantity()+1);
         listRepo.save(itemToIncrease);
         return getAllItems();
     }
 
     public List<ListItem> decreaseQuantity(String itemKey) {
         ListItem itemToDecrease = listRepo.findById(itemKey).get();
-        if(itemToDecrease.getQuantity()<=1){
+        if(itemToDecrease.getItemQuantity()<=1){
             return removeItem(itemKey);
         }
-        itemToDecrease.setQuantity(itemToDecrease.getQuantity()-1);
+        itemToDecrease.setItemQuantity(itemToDecrease.getItemQuantity()-1);
         return getAllItems();
     }
 

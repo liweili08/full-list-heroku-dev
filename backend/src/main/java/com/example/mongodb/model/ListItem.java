@@ -17,7 +17,7 @@ public class ListItem {
     String itemKey;
 
     String itemName;
-    int quantity;
+    int itemQuantity;
 
 
 }

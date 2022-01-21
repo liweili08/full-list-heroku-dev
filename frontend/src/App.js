@@ -6,7 +6,8 @@ import TestPage from "./pages/TestPage";
 import {useEffect, useState} from "react";
 import AddItem from "./components/AddItem";
 import {v4 as uuidv4} from 'uuid';
-import {getShoppingLists} from "./service/apiService";
+import {addItem, deleteItem, getShoppingLists, putQuantityPlus} from "./service/apiService";
+import LoginPage from "./pages/LoginPage";
 
 
 
@@ -36,14 +37,14 @@ import {getShoppingLists} from "./service/apiService";
 
 
 function App() {
-    const [itemList, setItemList] = useState([
-        {itemName: "Gurke", itemKey: uuidv4(), itemQuantity: 1},
-        {itemName: "Eis", itemKey: uuidv4(), itemQuantity: 2}
-    ])
+    const [itemList, setItemList] = useState()
+    /*  {itemName: "Gurke", itemKey: uuidv4(), itemQuantity: 1},
+      {itemName: "Eis", itemKey: uuidv4(), itemQuantity: 2}
+  */
 
     const [itemInput, setItemInput] = useState("")
 
-    function AddItemInput() {
+    /*function AddItemInput() {
         const itemToCheck = itemList.find((item) => item.itemName === itemInput);
         if (itemToCheck !== undefined) {
             alert(itemInput + " ist schon in der Liste!");
@@ -54,7 +55,7 @@ function App() {
         const newItemList = [...itemList, newItem];
         setItemList(newItemList);
         setItemInput("");
-    }
+    }*/
 
     function QuantityPlus(itemKey) {
         //console.log(itemKey)
@@ -89,12 +90,15 @@ function App() {
         setItemList(newItemList);
     }
 
-/*
+
    useEffect(() => {
         setupItemList().catch(e => console.log(e.message))
     }, [])
-    const setupItemList = () => getShoppingLists().then(data => setItemList(data.results))
-*/
+    const setupItemList = () => getShoppingLists().then(setItemList)
+
+if(!itemList){
+    return (<h1 className="Loading">Loading...</h1>)
+}
 
     return (
         <div className="App">
@@ -108,7 +112,7 @@ function App() {
                            onChange={(event) => setItemInput(event.target.value)}
                            value={itemInput}
                     />
-                    <button className="add-item-button" onClick={() => AddItemInput()}>Add</button>
+                    <button className="add-item-button" onClick={() => addItem({itemName: itemInput, itemQuantity: itemInput.itemQuantity})}>Add</button>
                 </div>
                 <div className="item-list">
                     {itemList.map((item) => (<div key={item.itemKey} className="item-info">
@@ -134,13 +138,13 @@ function App() {
 
 
             {/*<NameForm />*/}
-            {/*    <BrowserRouter>*/}
-            {/*        <Routes>*/}
-            {/*          <Route path="/" element={<HomePage/>}/>*/}
-            {/*          <Route path="/change" element={<ChangePage/>}/>*/}
-            {/*            <Route path="/test" element={<TestPage/>}/>*/}
-            {/*        </Routes>*/}
-            {/*      </BrowserRouter>*/}
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/login" element={<LoginPage/>}/>
+                        <Route path="/home" element={<HomePage/>}/>
+                      {/*<Route path="/change" element={<ChangePage/>}/>*/}
+                    </Routes>
+                  </BrowserRouter>
         </div>
     );
 }
