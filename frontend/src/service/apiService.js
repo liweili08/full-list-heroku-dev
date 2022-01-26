@@ -12,14 +12,22 @@ export const addItem=(newItem)=>
         .post("/api/lists",newItem)
         .then(response=> response.data)
 
-export const putQuantityPlus=(itemQuantity)=>
+
+export const putQuantityPlus=(itemKey)=>
     axios
-        .put("/api/lists/{itemKey}",itemQuantity)
-        .then(response=> response.data.get(itemQuantity))
+        .put(`/api/lists/${itemKey}`)
+        .then(response=> response.data)
 
 
 
-//export const deleteItem=(itemKey)=>
-//     axios
-//         .delete("/api/lists",itemToDelete)
-//         .then(response=>response.data)
+export const putQuantityMinus=(itemKey)=>
+    axios
+        .put(`/api/lists/${itemKey}/decrease`)
+        .then(response=> response.data)
+
+
+
+export const deleteItem=(itemKey)=>
+    axios
+        .delete(`/api/lists/${itemKey}`)
+        .then(response=>response.data)

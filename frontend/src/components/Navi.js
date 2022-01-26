@@ -6,9 +6,9 @@ export default function Navi(){
     return(
         <div className="navi">
             <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/change">Änderung</Link></li>
-                <li><Link to="/test">Überprüfen</Link></li>
+                <li><Link to="/home">Home</Link></li>
+                <li><Link to="/login">Login</Link></li>
+                {/*<li><Link to="/test">Überprüfen</Link></li>*/}
             </ul>
             <button onClick={()=>navigate(-1)}>Zurück</button>
         </div>

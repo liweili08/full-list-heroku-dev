@@ -29,7 +29,7 @@ public class ListController {
     }
 
     @PutMapping("/lists/{itemKey}")
-    public List<ListItem> putIncreaseQuantity(@PathVariable String itemKey){
+    public List<ListItem> putIncreaseQuantity(@PathVariable String itemKey ){
         return listService.increaseQuantity(itemKey);
     }
 
@@ -38,7 +38,7 @@ public class ListController {
         return listService.decreaseQuantity(itemKey);
     }
 
-    @DeleteMapping("/lists")
+    @DeleteMapping("/lists/{itemKey}")
     public List<ListItem> deleteItem(@PathVariable String itemKey){
         return listService.removeItem(itemKey);
     }

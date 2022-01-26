@@ -1,0 +1,14 @@
+.loginPage{
+    color: wheat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    color: #3d0404;
+}
+submit{
+    color: pink;
+    border: 5px solid hotpink;
+}
