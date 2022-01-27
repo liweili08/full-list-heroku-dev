@@ -22,7 +22,7 @@ export default function ListSachen() {
         setItemInput("");
     }*/
 
-    function QuantityPlus(itemKey) {
+   /* function QuantityPlus(itemKey) {
         //console.log(itemKey)
         const newItemList = itemList.map((item) => {
             if (item.itemKey === itemKey) {
@@ -33,9 +33,9 @@ export default function ListSachen() {
         })
         //console.log(newItemList);
         setItemList(newItemList);
-    }
+    }*/
 
-    function QuantityMinus(itemKey) {
+   /* function QuantityMinus(itemKey) {
         console.log(itemKey)
         const itemToChange = itemList.find((item) => item.itemKey === itemKey);
         if (itemToChange) {
@@ -47,13 +47,13 @@ export default function ListSachen() {
                 setItemList([...itemList]);
             }
         }
-    }
+    }*/
 
-    function ItemRemove(itemKey) {
+   /* function ItemRemove(itemKey) {
         console.log("ItemRemove", itemKey);
         const newItemList = itemList.filter((item) => item.itemKey !== itemKey);
         setItemList(newItemList);
-    }
+    }*/
 
     useEffect(() => {
         setupItemList().catch(e => console.log(e.message))

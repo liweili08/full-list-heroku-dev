@@ -50,8 +50,6 @@ public List<ListItem> getAllItems() {
     }
 
     public List<ListItem> removeItem(String itemKey) {
-       // if()
-        //listRepo.save(itemToDelete);
         ListItem itemToDelete = listRepo.findById(itemKey).get();
         listRepo.deleteById(itemToDelete.getItemKey());
         return getAllItems();
