@@ -142,7 +142,7 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<LoginPage/>}/>
-                    <Route path="/api/lists" element={<HomePage/>}/>
+                    <Route path="/lists" element={<HomePage/>}/>
                     {/*<Route path="/change" element={<ChangePage/>}/>*/}
                 </Routes>
             </BrowserRouter>
