@@ -51,6 +51,8 @@ public class MongodbApplication implements CommandLineRunner {
         //listRepo.insert(salat);
        // System.out.println(db);
 
+//        ListItem inttest = ListItem.builder().itemName("<TeX>\int_0^\infty x^3 dx</TeX>").quantity(3).build();
+//        listRepo.insert(inttest);
         // UserMongo liwei = UserMongo.builder().username("Liwei").password("12345").build();
         //  userRepo.save(liwei);
 

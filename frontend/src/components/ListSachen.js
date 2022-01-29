@@ -1,5 +1,7 @@
 import {useEffect, useState} from "react";
 import {addItem, deleteItem, getShoppingLists, putQuantityMinus, putQuantityPlus} from "../service/apiService";
+import 'katex/dist/katex.min.css';
+import TeX from '@matejmazur/react-katex';
 
 export default function ListSachen() {
     const [itemList, setItemList] = useState()
@@ -99,6 +101,7 @@ export default function ListSachen() {
         <div className="App">
             <h1>Einkaufslist</h1>
             <h2>hahaha</h2>
+            <h3> <TeX>\int_0^\infty x^2 dx</TeX> </h3>
             <div className="main-container">
                 <div className="add-item-box">
                     <input className="add-item-input"
@@ -114,7 +117,7 @@ export default function ListSachen() {
                 <div className="item-list">
                     {itemList.map((item) => (<div key={item.itemKey} className="item-info">
                             <div className="item-name">
-                                <span>{item.itemName}</span>
+                                <span>Aufgabe <TeX>{item.itemName}</TeX></span>
                             </div>
                             <div className="quantity">
                                 <button className="plus-button" onClick={() => plusAndRefresh(item.itemKey)}>+</button>

@@ -8,7 +8,8 @@ import AddItem from "./components/AddItem";
 import {v4 as uuidv4} from 'uuid';
 import {addItem, deleteItem, getShoppingLists, putQuantityPlus} from "./service/apiService";
 import LoginPage from "./pages/LoginPage";
-
+import 'katex/dist/katex.min.css';
+import TeX from '@matejmazur/react-katex';
 
 // function NameForm(props){
 //     const [value, setValue] = useState('');
