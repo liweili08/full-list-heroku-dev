@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import {addItem, deleteItem, getShoppingLists, putQuantityMinus, putQuantityPlus} from "../service/apiService";
 import 'katex/dist/katex.min.css';
 import TeX from '@matejmazur/react-katex';
+import 'katex/dist/katex.min.css';
 
 export default function ListSachen() {
     const [itemList, setItemList] = useState()
@@ -102,6 +103,7 @@ export default function ListSachen() {
             <h1>Einkaufslist</h1>
             <h2>hahaha</h2>
             <h3> <TeX>\int_0^\infty x^2 dx</TeX> </h3>
+            <h3> <TeX>\int_0^\infty y^2 dy</TeX> </h3>
             <div className="main-container">
                 <div className="add-item-box">
                     <input className="add-item-input"
